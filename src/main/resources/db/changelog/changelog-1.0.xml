@@ -3,5 +3,18 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-
+<changeSet id="6-5-21" author="Marion Raudsepp">
+    <createTable tableName="weather_queries">
+        <column name="id" type="int" autoIncrement="true">
+            <constraints primaryKey="true"/>
+        </column>
+        <column name="city" type="text"></column>
+        <column name="temperature" type="numeric"></column>
+        <column name="wind_direction" type="text"></column>
+        <column name="wind_speed" type="numeric"></column>
+    </createTable>
+</changeSet>
+<changeSet id="6-5-21 wind_direction" author="Marion Raudsepp">
+    <modifyDataType tableName="weather_queries" columnName="wind_direction" newDataType="numeric"></modifyDataType>
+</changeSet>
 </databaseChangeLog>
