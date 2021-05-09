@@ -1,20 +1,22 @@
 package com.example.datanorExample.Weather;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table (name="weather_queries")
-public class WeatherInfoHibernate {
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class AllQueries {
     private String city;
     private Double temperature;
     private Double windSpeed;
     private Double windDirection;
     private LocalDateTime dateTime;
 
+    public AllQueries(WeatherInfoHibernate weatherInfoHibernate) {
+        this.city = weatherInfoHibernate.getCity();
+        this.temperature = weatherInfoHibernate.getTemperature();
+        this.windSpeed = weatherInfoHibernate.getWindSpeed();
+        this.windDirection = weatherInfoHibernate.getWindDirection();
+        this.dateTime = weatherInfoHibernate.getDateTime();
+
+    }
 
     public String getCity() {
         return city;
@@ -46,14 +48,6 @@ public class WeatherInfoHibernate {
 
     public void setWindDirection(Double windDirection) {
         this.windDirection = windDirection;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public LocalDateTime getDateTime() {

@@ -13,7 +13,6 @@ public class WeatherInfo {
         this.wind_direction = weatherInfoHibernate.getWindDirection();
     }
 
-
     public String getCity() {
         return city;
     }

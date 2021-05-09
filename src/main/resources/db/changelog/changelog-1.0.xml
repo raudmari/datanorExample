@@ -17,4 +17,9 @@
 <changeSet id="6-5-21 wind_direction" author="Marion Raudsepp">
     <modifyDataType tableName="weather_queries" columnName="wind_direction" newDataType="numeric"></modifyDataType>
 </changeSet>
+    <changeSet id="8-05-21 date-time col" author="Marion Raudsepp">
+        <addColumn tableName="weather_queries">
+            <column name="date_time" type="timestamp"></column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
